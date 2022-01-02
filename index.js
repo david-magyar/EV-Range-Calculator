@@ -171,7 +171,6 @@ document.querySelector(".age-button-plus").addEventListener("click", function() 
     if (ageOfTheCar < 40) {
     ageOfTheCar = ageOfTheCar + 1
     document.querySelector("#number-of-age").value = ageOfTheCar
-    console.log(finalEstimatedRange);
     rangeCalculator();
 }
 })
