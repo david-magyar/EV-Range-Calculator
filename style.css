@@ -1,0 +1,714 @@
+body {
+    margin: 0;
+    font-family: 'Roboto Slab', serif;
+    /*background-color: #DDECD7;;*/
+    background-color: #f2f2f2;;
+}
+
+
+
+
+/* About */
+
+.top-container {
+  display: inline-block;
+  position: relative;
+  background-color: #DDECD7;
+}
+
+.aboutbackground {
+  width: 100%;
+}
+
+.title {
+  color: gray;
+  position: absolute;
+  top: 7%;
+  right: 10%;
+  font-size: 4vw;
+}
+
+.question {
+  color: gray;
+  position:absolute;
+  top: 70%;
+  left: 2%;
+  max-width: 40%;
+  font-size: 1.2vw;
+  text-align: justify;
+}
+
+.specification {
+  color: gray;
+  position: absolute;
+  top: 82%;
+  left: 2%;
+  max-width: 40%;
+  font-size: 1.2vw;
+  text-align: justify;
+}
+
+
+
+
+
+/* Middle-container */
+
+.middle-container {
+  background-color: #f2f2f2;
+}
+
+
+/* Choose a car */
+
+.choosthecar {
+  text-align: center;
+}
+
+#car-select {
+  background-color: white;
+  border-radius: 100px;
+  margin-top: 50px;
+  text-align: center;
+  height: 50px;
+  width: 270px;
+  font-size: 1.2rem;
+}
+
+/* Main boxes */
+
+.main-boxes {
+  display: none;
+}
+
+.main-boxes-visible {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/* Left panel */
+
+.box-with-buttons{
+  height:100%x;
+  width: 35%;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 20px 5px rgba(160,163,156,0.68);
+  margin: 50px 20px 50px auto;
+  text-align: center;
+}
+
+.box-with-buttons h4 {
+  margin: 24px auto 25px;
+}
+
+
+/* Speed */
+
+.sp-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 40px;
+}
+
+.speed-button {
+  border-radius: 100px;
+  height: 5px;
+  line-height: 5px;
+  color: #484848;
+  width: 80px;
+  font-size: 0.9rem;
+  font-weight: 100;
+  padding: 14px;
+  background-color: #E3E3E3;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+}
+
+.speed-button-clicked {
+  background: #DDECD7;
+  border-radius: 100px;
+}
+
+.speed-button:hover {
+  background: #DDECD7;
+  border-radius: 100px;
+}
+
+
+
+.box-with-buttons p {
+  display: inline-block;
+  margin: 0;
+}
+
+
+/* Battery degradation */
+
+.age-of-car p {
+  margin: auto 20px 40px 25px;
+}
+
+.age-button-minus {
+  border-radius: 100px;
+  height: 9px;
+  line-height:9px;
+  color: #484848;
+  width: 9px;
+  font-size: 0.9rem;
+  font-weight: 100;
+  padding: 14px;
+  background-color: #E3E3E3;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+}
+
+.age-button-minus:hover {
+  background: #DDECD7;
+  border-radius: 100px;
+}
+
+.age-button-plus {
+  border-radius: 100px;
+  height: 9px;
+  line-height:9px;
+  color: #484848;
+  width: 9px;
+  font-size: 0.9rem;
+  font-weight: 100;
+  padding: 14px;
+  background-color: #E3E3E3;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+}
+
+.age-button-plus:hover {
+  background: #DDECD7;
+  border-radius: 100px;
+}
+
+#number-of-age {
+  background-color: white;
+  border-radius: 100px;
+  border-width: 1.5px;
+  width: 65px;
+  height: 23px;
+  text-align: center;
+  margin: auto 5px;
+}
+
+/* Weather/Temperature */
+
+.weather-switch {
+  display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.weather-temperature p{
+  padding-top: 10px;
+}
+
+.weather-temperature-unvisible {
+ display: none;
+}
+
+
+.weather-with-api {
+  display: none;
+}
+
+
+.weather-with-api-visible {
+  visibility: visible;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+}
+
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #E3E3E3;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #DDECD7;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #DDECD7;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+
+.temperature {
+  width: 100%;
+  display: block;
+}
+
+.temperature-slider {
+  -webkit-appearance: none;
+  width: 50%;
+  height: 7px;
+  border-radius: 5px;  
+  background: #E3E3E3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.temperature-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%; 
+  background: #DDECD7;
+  cursor: pointer;
+}
+
+.temperature-slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #DDECD7;
+  cursor: pointer;
+}
+
+/* Weather API*/
+
+.weather {
+  display: none;
+  text-align: center;
+}
+
+.weatherafter {
+  display: block;
+  text-align: center;
+}
+
+.weatherafter h2 {
+  margin: 18px auto 5px auto
+}
+
+.search-bar {
+  background-color: white;
+  border-radius: 100px;
+  border-width: 1.5px;
+  border-color: #484848; ;
+  width: 180px;
+  height: 23px;
+  text-align: center;
+  margin: auto 5px;
+}
+
+.searchbutton {
+  border-width: 0;
+  border-radius: 100px;
+  height: 5px;
+  line-height: 5px;
+  box-sizing: unset;
+  width: 50px;
+  color: #484848;
+  font-size: 0.8rem;
+  font-weight: 100;
+  padding: 14px;
+  background-color: #E3E3E3;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+}
+
+.searchbutton:hover {
+  background: #DDECD7;
+  border-radius: 100px;
+}
+
+
+
+/* State of charge */
+
+.state-of-charge-switch {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.state-of-charge-switch p {
+  margin-top: 10px;
+  margin-bottom: 35px;
+}
+
+.state-of-charge {
+  width: 100%;
+  display: inline;
+}
+
+.charge-state-slider {
+
+  -webkit-appearance: none;
+  width: 50%;
+  height: 7px;
+  border-radius: 5px;  
+  background: #E3E3E3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.charge-state-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%; 
+  background: #DDECD7;
+  cursor: pointer;
+}
+
+.charge-state-slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #DDECD7;
+  cursor: pointer;
+}
+
+
+/* Right panel */
+
+.box-with-car {
+  height: 550px;
+  width: 35%;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 20px 5px rgba(160,163,156,0.68);
+  margin: 50px auto 50px 20px;
+  text-align: center;
+}
+
+.box-with-car p {
+  width: 80%;
+  margin: 50px auto 35px auto;
+}
+
+.estimated-range {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.estimated-range h1 {
+  font-size: 3rem;
+}
+
+.carimg {
+visibility: hidden;
+}
+
+.carimgvisible {
+  margin-top: 5px;
+  visibility: visible;
+  width: 80%;
+}
+
+.comment-on-range {
+visibility: hidden;
+}
+
+.comment-on-range-visible {
+  visibility: visible;
+}
+
+.box-with-car p {
+  font-size: 0.8rem ;
+}
+
+
+
+.first-hr {
+display: none;
+}
+
+.first-hr-visible {
+  display: block;
+  color: #DDECD7;
+  border: dotted;
+  border-width: 6px 0 0;
+  width: 6%;
+  margin: 15px auto 15px auto;
+  clear: both;
+}
+
+
+
+/* Info boxes */
+
+.info-boxes {
+  display: none;
+}
+
+.info-boxes-visible {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+/* Car info */
+ .box-with-info {
+  height: 100%;
+  width: 45%;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 20px 5px rgba(160,163,156,0.68);
+  margin: 50px auto 13px auto;
+  text-align: center;
+ }
+
+ .box-with-info img {
+  width: 5%;
+}
+
+.box-with-info table {
+  margin-top: 10px;
+  padding-bottom: 15px;
+  display: inline-block;
+}
+
+.info-table {
+  margin-right: 20px;
+}
+
+.info-table tbody{
+  text-align: left;
+  padding-right: 10px;
+}
+
+.charge-port-table {
+  margin-left: 20px;
+}
+
+.charge-port-table tbody {
+  text-align: left;
+}
+
+ .information {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: nowrap;
+   align-items: center;
+   justify-content: center;
+   gap: 10px;
+ }
+
+
+
+ /* Charging info */
+ 
+.box-with-charging-info {
+  height: 100%;
+  width: 45%;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 20px 5px rgba(160,163,156,0.68);
+  margin: 50px auto 50px auto;
+  text-align: center;
+ }
+
+ .box-with-charging-info img {
+  width: 5%;
+}
+
+.box-with-charging-info table {
+  display: inline-block;
+}
+
+.dc-table {
+  margin-right: 40px;
+}
+
+.dc-table tbody {
+  text-align: left;
+}
+
+.ac-table {
+  margin-left: 40px;
+}
+
+.ac-table tbody {
+  text-align: left;
+}
+
+.box-with-charging-info p {
+  padding-left: 30px;
+  padding-bottom: 30px;
+  font-size: 0.75rem;
+}
+
+.box-with-charging-info h4 {
+ padding-left: 30px;
+}
+
+ .charging-information {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: nowrap;
+   align-items: center;
+   justify-content: center;
+   gap: 10px;
+ }
+
+
+/* Horizontal rule */
+
+.second-hr {
+display: none;
+}
+
+.second-hr-visible {
+display: block;
+color: #DDECD7;
+border: dotted;
+border-width: 6px 0 0;
+width: 6%;
+margin: 15px auto 65px auto;
+clear: both;
+}
+
+
+/* Blog */
+
+.bottom-container {
+  height: 100%;
+  width: 70%;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 20px 5px rgba(160,163,156,0.68);
+  margin: 50px auto auto auto;
+  text-align: center;
+}
+
+.blog {
+  width: 75%;
+  margin: 65px auto 70px auto;
+  text-align: center;
+}
+
+.bottom-container h1 {
+ padding-top: 30px;
+}
+
+.bottom-container h3 {
+  text-align: center;
+  
+}
+
+.bottom-container p {
+  text-align: justify;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  color:#40514e;
+  line-height: 2;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.float-left {
+  width: 15%;
+  float: left;
+  padding-right: 20px;
+}
+
+.float-right {
+  width: 15%;
+  float: right;
+  padding-left: 20px;
+}
+
+
+
+
+
+
+
+/* Footer */
+
+.footer {
+background-color: #DDECD7;
+margin: 0 auto;
+padding-top: 10px;
+padding-bottom: 10px;
+text-align: center;
+}
+
+.footer-link {
+color: #87B779;
+margin: 30px;
+text-decoration: none;
+font-weight: bold;
+font-size: 1.125rem;
+}
+
+.copyright {
+color: #87B779;
+margin: 10px auto 0;
+font-size: 0.75rem;
+}

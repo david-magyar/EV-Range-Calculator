@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="icons/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200&family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
+    <title>EV Range Calculator</title>
+</head>
+
+<body>
+
+
+<div class="top-container">
+    <img class="aboutbackground" src="images/about_backround.jpg" alt="background">
+    <h1 class="title">EV Range Calculator</h1>
+    <p class="question">Electric cars became incredibly popular, but this new way of travelling raises many questions. Maybe the most complex and also everyone's first question is: „How far can I go”?</p>
+    <p class="specification">With this EV Range Calculator, we can estimate the range of different electric cars based on speed, battery degradation, temperature and actual state of charge.</p>
+</div>
+  
+
+<div class="middle-container">
+    
+    <div class="choosthecar">
+        <select name="cars" id="car-select">
+            <option value="">Choose a car</option>
+            <option value="renaultt">Renault Twingo - 22kWh</option>
+            <option value="renaultz">Renault Zoe - 41kWh</option>
+            <option value="peugeot">Peugeot-e 208 - 50kWh</option>
+        </select>
+    </div>
+
+    <div class="main-boxes">
+
+        <div class="box-with-buttons">
+            
+            <h4>Speed:</h4>
+            <div class="sp-buttons">
+                <a class="speed-button fiftykmh">50km/h</a>
+                <a class="speed-button ninetykmh">90km/h</a>
+                <a class="speed-button onehundredandthirtykmh">130km/h</a>
+             </div>
+
+             <h4>Battery degradation:</h4>
+             <div class="age-of-car">
+                <p>Age of your car (years):</p>
+                <a class="age-button-minus">-</a>
+                <input readonly type="text" value="0" id="number-of-age">
+                <a class="age-button-plus">+</a>
+            </div>
+
+            <h4>Temperature/Weather:</h4>
+            <div class="weather-switch">
+                <p>Set temperature</p>
+                <label class="switch">
+                <input id="switchh" type="checkbox">
+                <span class="slider round"></span>
+                </label>
+                <p>Based on location</p>
+            </div>
+
+            <div class="weather-temperature">
+                <div class="temperature">
+                    <input type="range" min="0" max="40" value="30" step="10" class="temperature-slider" id="myRange">
+                </div>
+                
+                <p>°C</p>
+            </div>
+
+            <div class="weather-with-api">
+                <input type="text" class="search-bar" placeholder="Type the location here">
+                <button class="searchbutton">Search</button>
+            </div>
+
+            <div class="weather">
+                <h2 class="city"></h2>
+                <h2 class="temp"></h2>
+                <img src="https://openweathermap.org/img/wn/" alt="" class="icon" />
+            </div>
+
+            <h4>State of charge:</h4>
+            <div class="state-of-charge-switch">
+
+                <div class="state-of-charge">
+                    <input type="range" min="0" max="100" value="100" step="1" class="charge-state-slider" id="myRange">
+                </div>
+
+                <p>%</p>
+
+
+            </div>
+
+        </div>
+
+        <div class="box-with-car">
+            <div class="estimated-range">
+                <h3>Estimated range</h3>
+                <h1 class="final-estimated-range-text">km</h1>
+            </div>
+
+            <img class="carimg" src="" alt="carimage">
+            <p class="comment-on-range">Range is calculated with normal driving mode and cabin heating/cooling turned off.</p>
+        </div> 
+
+    </div>
+
+    <hr class="first-hr">
+
+    <div class="info-boxes">
+
+        <div class="box-with-info">
+
+            <div class="information">
+                <img src="images/information.png" alt="information">
+                <h3>About car</h3>
+            </div>
+
+            <div>
+    
+            <table>
+                <tr>
+                    <td>
+                        <table class="info-table">
+                            <tr>
+                                <td>Battery size:</td>
+                                <td class="battery-size"></td>
+                            </tr>
+                            <tr>
+                                <td>Acceleration (0 - 100 km/h):</td>
+                                <td class="acceleration"></td>
+                            </tr>
+                            <tr>
+                                <td>Top Speed:</td>
+                                <td class="top-speed"></td>
+                            </tr>
+                            <tr>
+                                <td>Total Power:</td>
+                                <td class="power"></td>
+                            </tr>
+                            <tr>
+                                <td>Weight:</td>
+                                <td class="weight"></td>
+                            </tr>
+                        </table>
+                    </td>
+    
+                    <td>
+                        
+                        <table class="charge-port-table">
+                            <tr>
+                                <td>Charge Port:</td>
+                                <td class="charge-port"></td>
+                            </tr>
+                            <tr>
+                                <td>Charge Power:</td>
+                                <td class="charge-power"></td>
+                            </tr>
+                            <tr>
+                                <td>Fast charge Port:</td>
+                                <td class="fast-charge-port"></td>
+                            </tr>
+                            <tr>
+                                <td>Fast charge Power:</td>
+                                <td class="fast-charge-power"></td>
+                            </tr>
+                        </table>
+                        
+                    </td>
+                </tr>
+    
+    
+            </table>
+
+        </div>
+        
+    
+        </div> 
+
+        <div class="box-with-charging-info">
+        
+                <div class="charging-information">
+                    <img src="images/charging.png" alt="information">
+                    <h3>Charging</h3>
+                </div>
+        
+                <div>
+                    <h4>Charging time based on charge power (0% - 100%)*:</h4>
+        
+                    <table>
+                        <tr>
+                            <td>
+                                <table class="dc-table">
+                                    <tr>
+                                        <td>100kW DC:</td>
+                                        <td class="hundred"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>50kW DC:</td>
+                                        <td class="fifty"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>22kW AC:</td>
+                                        <td class="twentytwo"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>11kW AC:</td>
+                                        <td class="eleven"></td>
+                                    </tr>  
+                                </table>                                  
+                            </td>
+                        
+                            <td>
+                        
+                            <table class="ac-table">
+                                <tr>
+                                    <td>7.4kW AC:</td>
+                                    <td class="seven"></td>
+                                </tr>
+                                <tr>
+                                    <td>3.7kW AC:</td>
+                                    <td class="three"></td>
+                                </tr>
+                                <tr>
+                                    <td>2.3kW AC:</td>
+                                    <td class="two"></td>
+                                </tr>
+                            </table>
+                        
+                            </td>
+                        </tr>
+                    </table>
+                                
+                    <p>*Charging time may differ from data shown due to factors like outside temperature and charging station. </p>
+        
+                </div>
+        
+        </div>
+
+    </div>
+
+
+</div>
+
+<hr class="second-hr">
+
+<div class="bottom-container">
+    <h1>10 Factors That Affect Electric Vehicle Range</h1>
+    
+    <div class="blog">
+    <h3>1. Battery:</h3>
+    <img class="float-left" src="images/battery.png" alt="battery">
+    <p>The single biggest factor that determines the range of an EV is the capacity of the lithium-ion battery at its core. This refers to the amount of electricity that can be stored and how densely the battery cells are stored. More densely packed the battery cells are, the better the drive range is likely to be. Of course, development of battery tech is consistently improving drive range of EVs even though wear on battery in the long run may have a detrimental impact on range.</p>
+    
+    <h3>2. Battery wear:</h3>
+    <img class="float-right" src="images/battery_degradation.png" alt="battery wear">
+    <p>A determining factor in the range of an electric vehicle is the age and condition of the battery it is fitted with. Recent progress in lithium-ion technology ensures that your car battery will have a long life, even after sustained use. There is, however, a form of wear that can affect the capacity of the battery, and therefore the range of the vehicle over time as a result of successive charging cycles. This is why the capacity of the battery — and therefore the range of kilometers it offers — diminishes over the years.</p>
+    
+    <h3>3. Cold Weather:</h3>
+    <img class="float-left" src="images/weather_temperature.png" alt="colt weather">
+    <p>The cold ambient weather is unfriendly to electric cars. Specifically, EV batteries are not fond of cold weather. This is because they need to operate at a neutral temperature. Excessive cold, or excessive heat, will result in loss of range. During cold ambient temperatures, the battery will need to use energy to heat itself up. With an EV, to heat up the cabin, fuel, or other vehicle parts must be created using energy from the battery. During cold weather, you will start to find a slight drop in range due to the battery needing to warm up.</p>
+    
+    <h3>4. Wind:</h3>
+    <img class="float-right" src="images/wind.png" alt="wind">
+    <p>Another factor that affects electric vehicle range is wind–headwind that is. This one is fairly straightforward. The higher the headwinds, the more resistance the vehicle experiences, therefore, the motor has to work harder to combat the negative effect.</p>
+    
+    <h3>5. Air-conditioning:</h3>
+    <img class="float-left" src="images/air_conditioner.png" alt="air conditioner">
+    <p>The range of an EV is affected with air-conditioning. This is true for both cooling and heating. In countries with cold weather, many advise switching on seat-warm feature if available rather than using the heating mode.</p>
+    
+    <h3>6. Speed:</h3>
+    <img class="float-right" src="images/speed.png" alt="speed">
+    <p>Driving at high speeds reduces the electric car’s efficiency. The reason for this is the faster you drive, the more work the electric motor has to do.</p>
+    
+    <h3>7. Road topography and conditions:</h3>
+    <img class="float-left" src="images/topography.png" alt="topography">
+    <p>Going uphill for 20 kilometers, for instance, and going downhill for the same distance has vastly different impact on the drive range of an EV. Going up would need more energy while constant braking while moving down will send energy back. As such, the battery will deplete slower when moving down a hill. The condition of a road surface too has some impact on the range of an EV.</p>
+    
+    <h3>8. Drive style:</h3>
+    <img class="float-right" src="images/steering_wheel.png" alt="sriving style">
+    <p>EV's range is also determined by how a driver steers it. Sudden or frequent acceleration, apart from the weight of the EV, has an impact on its per-charge range figure.</p>
+    
+    <h3>9. The weight of the car:</h3>
+    <img class="float-left" src="images/weight.png" alt="weight">
+    <p>The heavier the car, the more energy is required to move it. The range is thus reduced when there are four passengers in the vehicle or with a heavy load in the trunk.</p>
+    
+    <h3>10. Tyre condition:</h3>
+    <img class="float-right" src="images/tyre.png" alt="tyre condition">
+    <p>While an EV requires a lot less in terms of servicing needs, there is a need to keep a close watch on the tyres. If you are driving an EV with tires that are at the end of their life and the roads are wet from rain, then you can expect the range to slightly decrease. Additionally, under-inflated tires will not only not perform as well, but will also not be as efficient. Old and worn-out tyres will not impact range as much as speed, however, it still plays a part in range loss.</p>
+    </div>
+</div>
+
+<div class="footer">
+    <a class="footer-link" href="https://www.linkedin.com/in/david-magyar/">LinkedIn</a>
+    <p class="copyright">© 2022 Dávid Magyar</p>
+</div>
+
+<script src="index.js"></script>
+</body>
+
+</html>
